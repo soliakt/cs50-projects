@@ -19,7 +19,7 @@ def add(request):
            entry = form.cleaned_data["entry"] 
            # Esto guarda la entrada utilizando la función save_entry de util
            util.save_entry(entry, "")
-           return redirect("encyclopedia/index.html")
+           return redirect("encyclopedia:index")
         else:
             return render(request, "encyclopedia/add.html",{
                 "form": form
