@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body%}
+    <h1>Add an entry</h1>
+    <form action="{% url 'encyclopedia:add' %}" method="post">
+        <!-- Este token viene de settings.py dentro de middleware 'django.middleware.csrf.CsrfViewMiddleware'-->
+        <!-- Encripta la información que introducimos para que no sea vulnerable-->
+        {% csrf_token %}
+        <!-- Esto hace una llamada a views.py donde hemos creado la clase NewEntryForm-->
+        {{form}}
+        <input type="submit">
+    </form>
+{% endblock %}

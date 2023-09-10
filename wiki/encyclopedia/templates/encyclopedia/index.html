@@ -12,5 +12,9 @@
             <li>{{ entry }}</li>
         {% endfor %}
     </ul>
+    <a href="{% url 'encyclopedia:add' %}">Add a new entry</a>
+    <!-- Aquí va a urls y busca la url que se llame add-->
+    <!-- No es necesario poner el encyclopedia:add porque solo hay una app-->
+    <!-- Pero al haber añadido en urls.py app_name = "encyclopedia", hay que ponerlo-->
 
 {% endblock %}
