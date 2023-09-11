@@ -1,0 +1,9 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body%}
+    <h1>The titled introduced is already in the database</h1>
+    <a href="{% url 'encyclopedia:add' %}"> Add a new entry </a>
+    <br>
+    <a href="{% url 'encyclopedia:index' %}">Home</a>
+    
+{% endblock %}

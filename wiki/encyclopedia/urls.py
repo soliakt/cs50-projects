@@ -9,5 +9,6 @@ from . import views
 app_name = "encyclopedia"
 urlpatterns = [
     path("", views.index, name="index"),
-    path("add", views.add, name="add")
+    path("add", views.add, name="add"),
+    path("404", views.error_404, name="404")
 ]
