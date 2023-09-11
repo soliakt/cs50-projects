@@ -1,7 +1,7 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block body %}
-    <h1>{{ entry }}</h1>
+    <h1>{{ title }}</h1>
     <!--Al poner |safe le indidamos a django que 
     el contenido ya ha sido sanitizado y es seguro de renderizar como HTML-->
     <div>{{ content|safe }}</div>
