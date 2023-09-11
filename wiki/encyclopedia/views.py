@@ -9,6 +9,7 @@ from . import util
 entries = []
 class NewEntryForm(forms.Form):
     entry = forms.CharField(label="Title")
+    content = forms.CharField(label="Content", widget=forms.Textarea)
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -24,8 +25,9 @@ def add(request):
         form = NewEntryForm(request.POST)
         if form.is_valid():
             entry = form.cleaned_data["entry"]
+            content = form.cleaned_data["content"]
             try: 
-                util.save_entry(entry, "")
+                util.save_entry(entry, content)
                 # Esto guarda la entrada utilizando la función save_entry de util
                 return redirect("encyclopedia:index")
             except ValidationError as e:
