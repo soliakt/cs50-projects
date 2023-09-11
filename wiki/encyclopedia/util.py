@@ -1,9 +1,13 @@
-import re
+import re, markdown2
 from xml.dom import ValidationErr
 from django.core.exceptions import ValidationError
 
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
+
+
+def render_markdown_to_html(markdown_content):
+    return markdown2.markdown(markdown_content)  # Convierte Markdown a HTML
 
 
 def list_entries():
@@ -40,3 +44,4 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+    

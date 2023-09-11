@@ -10,5 +10,6 @@ app_name = "encyclopedia"
 urlpatterns = [
     path("", views.index, name="index"),
     path("add", views.add, name="add"),
-    path("404", views.error_404, name="404")
+    path("404", views.error_404, name="404"),
+    path("entries/<str:entry_title>", views.content_page, name="contentPage")
 ]
